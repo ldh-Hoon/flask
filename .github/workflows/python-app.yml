@@ -8,22 +8,20 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ['3.6', '3.8']
-        exclude:
-          - os: macos-latest
-            python-version: '3.8'
-          - os: windows-latest
-            python-version: '3.6'
-
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: "3.8"
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: ldhHoon/github-actions-app
+        tags: v3, latest
+        registry: docker.io
+        username: ldhHoon
+        password: dckr_pat_lh85Pc6avb0vDEVirY5PA8HLddQ
