@@ -20,8 +20,8 @@ jobs:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: ldhHoon/github-actions-app
+        image: ldhhoon/github-actions-app
         tags: v3, latest
         registry: docker.io
-        username: ldhHoon
+        username: ldhhoon
         password: dckr_pat_lh85Pc6avb0vDEVirY5PA8HLddQ
