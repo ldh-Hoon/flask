@@ -21,7 +21,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: ldhhoon/github-actions-app
-        tags: ${{ github.sha }}
+        tags: ${{ github.sha }}, v1.0.0
         registry: docker.io
         username: ldhhoon
         password: dckr_pat_lh85Pc6avb0vDEVirY5PA8HLddQ
