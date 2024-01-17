@@ -24,7 +24,7 @@ def hello():
     return render_template("page.html")
 
 @app.route("/home")
-def home():
+def home2():
     return render_template("home.html")
 
 if __name__ == '__main__':
